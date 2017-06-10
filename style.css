@@ -45,5 +45,6 @@ body {
 }
 
 #button-divide, #button-multiply, #button-minus, #button-add {
-  color: ;
+  background-color: #82c276;
+  color: grey;
 }
