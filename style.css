@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Inconsolata', monospace;
+  background-color: #CAD2C5;
 }
 
 .calcContainer {
@@ -15,6 +16,10 @@ body {
   font-size: 30px;
   font-weight: lighter;
   color: white;
+  border: 10px solid #527211;
+  border-radius: 10px;
+  padding: 1px;
+  background-color: white;
 }
 
 .row {
