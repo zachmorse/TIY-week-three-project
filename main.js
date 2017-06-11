@@ -140,4 +140,5 @@ function buttonEvaluate() {
   arrayToString = arrayToString.replace(/\s/g, "");
   console.log(arrayToString);
   console.log(eval(arrayToString));
+  calcArray = [];
 }
