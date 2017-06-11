@@ -9,6 +9,7 @@
 // 7. "C" button will convert array to empty array
 
 // Declaring initial global variables:
+
 var calcArray = [];
 
 var button0 = document.getElementById("button-zero");
@@ -27,6 +28,9 @@ var buttonSubtract = document.getElementById("button-minus");
 var buttonDivide = document.getElementById("button-divide");
 var buttonMultiply = document.getElementById("button-multiply");
 var buttonDecimal = document.getElementById("button-decimal");
+
+var buttonClr = document.getElementById("button-clr");
+var buttonEquals = document.getElementById("button-equals");
 
 // adding event listeners for each clickable element:
 
@@ -47,55 +51,58 @@ buttonDivide.addEventListener("click", buttonDividedBy);
 buttonMultiply.addEventListener("click", buttonMultiplication);
 buttonDecimal.addEventListener("click", buttonDecimalPoint);
 
+buttonClr.addEventListener("click", ButtonClear);
+buttonEquals.addEventListener("click", buttonEvaluate);
+
 // function calls for each button:
 
 function buttonZero() {
-  calcArray.push(0);
+  calcArray.push("0");
   console.log(calcArray);
 }
 
 function buttonOne() {
-  calcArray.push(1);
+  calcArray.push("1");
   console.log(calcArray);
 }
 
 function buttonTwo() {
-  calcArray.push(2);
+  calcArray.push("2");
   console.log(calcArray);
 }
 
 function buttonThree() {
-  calcArray.push(3);
+  calcArray.push("3");
   console.log(calcArray);
 }
 
 function buttonFour() {
-  calcArray.push(4);
+  calcArray.push("4");
   console.log(calcArray);
 }
 
 function buttonFive() {
-  calcArray.push(5);
+  calcArray.push("5");
   console.log(calcArray);
 }
 
 function buttonSix() {
-  calcArray.push(6);
+  calcArray.push("6");
   console.log(calcArray);
 }
 
 function buttonSeven() {
-  calcArray.push(7);
+  calcArray.push("7");
   console.log(calcArray);
 }
 
 function buttonEight() {
-  calcArray.push(8);
+  calcArray.push("8");
   console.log(calcArray);
 }
 
 function buttonNine() {
-  calcArray.push(9);
+  calcArray.push("9");
   console.log(calcArray);
 }
 
@@ -122,4 +129,15 @@ function buttonMultiplication() {
 function buttonDecimalPoint() {
   calcArray.push(".");
   console.log(calcArray);
+}
+
+function ButtonClear() {
+  calcArray = [];
+}
+
+function buttonEvaluate() {
+  var arrayToString = calcArray.join(" ");
+  arrayToString = arrayToString.replace(/\s/g, "");
+  console.log(arrayToString);
+  console.log(eval(arrayToString));
 }
