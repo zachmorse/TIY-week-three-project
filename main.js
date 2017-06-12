@@ -51,7 +51,7 @@ buttonDivide.addEventListener("click", buttonDividedBy);
 buttonMultiply.addEventListener("click", buttonMultiplication);
 buttonDecimal.addEventListener("click", buttonDecimalPoint);
 
-buttonClr.addEventListener("click", ButtonClear);
+buttonClr.addEventListener("click", buttonClear);
 buttonEquals.addEventListener("click", buttonEvaluate);
 
 // function calls for each button:
@@ -131,7 +131,7 @@ function buttonDecimalPoint() {
   console.log(calcArray);
 }
 
-function ButtonClear() {
+function buttonClear() {
   calcArray = [];
 }
 
@@ -140,5 +140,6 @@ function buttonEvaluate() {
   arrayToString = arrayToString.replace(/\s/g, "");
   console.log(arrayToString);
   console.log(eval(arrayToString));
-  calcArray = [];
+  // calcArray = [];
+  buttonClear();
 }
