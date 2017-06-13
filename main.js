@@ -2,144 +2,48 @@
 // This program will:
 // 1. listen for keypresses of each element
 // 2. display each keypress in display panel
-// 3. functions will append element to array when pressed
-// 4. array is appended with each keypress
-// 5. array elements will be joined together and made into string
+// 3. functions will concat to string when pressed
+// 4. string is concatenated with each keypress
+// 5. string elements will be joined together
 // 6. string will be solved as equation by eval when "equals" is pressed
-// 7. "C" button will convert array to empty array
+// 7. "C" button will convert string back to empty
 
 // Declaring initial global variables:
 
-var calcArray = [];
-
-var button0 = document.getElementById("button-zero");
-var button1 = document.getElementById("button-one");
-var button2 = document.getElementById("button-two");
-var button3 = document.getElementById("button-three");
-var button4 = document.getElementById("button-four");
-var button5 = document.getElementById("button-five");
-var button6 = document.getElementById("button-six");
-var button7 = document.getElementById("button-seven");
-var button8 = document.getElementById("button-eight");
-var button9 = document.getElementById("button-nine");
-
-var buttonAdd = document.getElementById("button-add");
-var buttonSubtract = document.getElementById("button-minus");
-var buttonDivide = document.getElementById("button-divide");
-var buttonMultiply = document.getElementById("button-multiply");
-var buttonDecimal = document.getElementById("button-decimal");
-
+var calcString = ""; // initial empty string for calculation
+var nums = document.querySelectorAll(".content"); // gets an array of all the number and operator buttons
 var buttonClr = document.getElementById("button-clr");
 var buttonEquals = document.getElementById("button-equals");
-
-// adding event listeners for each clickable element:
-
-button0.addEventListener("click", buttonZero);
-button1.addEventListener("click", buttonOne);
-button2.addEventListener("click", buttonTwo);
-button3.addEventListener("click", buttonThree);
-button4.addEventListener("click", buttonFour);
-button5.addEventListener("click", buttonFive);
-button6.addEventListener("click", buttonSix);
-button7.addEventListener("click", buttonSeven);
-button8.addEventListener("click", buttonEight);
-button9.addEventListener("click", buttonNine);
-
-buttonAdd.addEventListener("click", buttonPlus);
-buttonSubtract.addEventListener("click", buttonMinus);
-buttonDivide.addEventListener("click", buttonDividedBy);
-buttonMultiply.addEventListener("click", buttonMultiplication);
-buttonDecimal.addEventListener("click", buttonDecimalPoint);
 
 buttonClr.addEventListener("click", buttonClear);
 buttonEquals.addEventListener("click", buttonEvaluate);
 
 // function calls for each button:
 
-function buttonZero() {
-  calcArray.push("0");
-  console.log(calcArray);
+function concatNum(event) {
+  console.log(event);
+  console.log(event.target);
+  var value = event.target.textContent;
+  console.log("value: ", value);
+  calcString += value;
+  console.log("calcString: ", calcString);
+  displayUpdate();
 }
 
-function buttonOne() {
-  calcArray.push("1");
-  console.log(calcArray);
+function displayUpdate() {
+  document.getElementById("display").innerHTML = calcString;
 }
 
-function buttonTwo() {
-  calcArray.push("2");
-  console.log(calcArray);
-}
-
-function buttonThree() {
-  calcArray.push("3");
-  console.log(calcArray);
-}
-
-function buttonFour() {
-  calcArray.push("4");
-  console.log(calcArray);
-}
-
-function buttonFive() {
-  calcArray.push("5");
-  console.log(calcArray);
-}
-
-function buttonSix() {
-  calcArray.push("6");
-  console.log(calcArray);
-}
-
-function buttonSeven() {
-  calcArray.push("7");
-  console.log(calcArray);
-}
-
-function buttonEight() {
-  calcArray.push("8");
-  console.log(calcArray);
-}
-
-function buttonNine() {
-  calcArray.push("9");
-  console.log(calcArray);
-}
-
-function buttonPlus() {
-  calcArray.push("+");
-  console.log(calcArray);
-}
-
-function buttonMinus() {
-  calcArray.push("-");
-  console.log(calcArray);
-}
-
-function buttonDividedBy() {
-  calcArray.push("/");
-  console.log(calcArray);
-}
-
-function buttonMultiplication() {
-  calcArray.push("*");
-  console.log(calcArray);
-}
-
-function buttonDecimalPoint() {
-  calcArray.push(".");
-  console.log(calcArray);
+for (var i = 0; i < nums.length; i++) {
+  nums[i].addEventListener("click", concatNum);
 }
 
 function buttonClear() {
-  calcArray = [];
+  calcString = "";
+  displayUpdate();
 }
 
 function buttonEvaluate() {
-  var arrayToString = calcArray.join(" ");
-  arrayToString = arrayToString.replace(/\s/g, "");
-  console.log(arrayToString);
-  console.log(eval(arrayToString));
-  // calcArray = [];
+  console.log(eval(calcString));
   buttonClear();
 }
