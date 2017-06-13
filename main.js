@@ -26,7 +26,7 @@ function concatNum(event) {
   var value = event.target.textContent;
   console.log("value: ", value);
   calcString += value;
-  console.log("calcString: ", calcString);
+  console.log(calcString);
   displayUpdate();
 }
 

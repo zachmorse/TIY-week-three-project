@@ -28,6 +28,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  line-height: 76px;
 }
 
 .button {
@@ -47,7 +48,7 @@ body {
 }
 
 #display {
-  flex: 3;
+  flex: 3.08;
 }
 
 #button-divide, #button-multiply, #button-minus, #button-add {
