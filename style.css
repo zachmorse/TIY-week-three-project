@@ -38,17 +38,14 @@ body {
   text-align: center;
 }
 
-.button > p {
-  position: relative;
-  bottom: 9px;
-}
-
 #button-clr {
   flex: 1;
 }
 
 #display {
-  flex: 3.08;
+  flex: 2.8;
+  text-align: right;
+  padding: 0px 10px;
 }
 
 #button-divide, #button-multiply, #button-minus, #button-add {
