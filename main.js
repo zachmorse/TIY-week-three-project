@@ -37,7 +37,7 @@ function buttonEvaluate() {
     document.getElementById("display").innerHTML = "Invalid";
     setTimeout(buttonClear, 500);
   } else {
-    calcString = eval(calcString);
+    calcString = +eval(calcString).toFixed(4);
     displayUpdate();
   }
 }
