@@ -1,5 +1,3 @@
-// Declaring initial global variables:
-
 var calcString = "";
 var nums = document.querySelectorAll(".content");
 var buttonClr = document.getElementById("button-clr");
@@ -7,8 +5,6 @@ var buttonEquals = document.getElementById("button-equals");
 
 buttonClr.addEventListener("click", buttonClear);
 buttonEquals.addEventListener("click", buttonEvaluate);
-
-// function calls for each button:
 
 function concatNum(event) {
   var value = event.target.textContent;
